@@ -35,7 +35,7 @@ export default function PatientForm() {
     }
 
     return (
-        <div className="md:w-1/2 lg:w-2/5 mx-5 bg-slate-100 pe-10 ps-10 pt-4 rounded-lg">
+        <div className="md:w-1/2 lg:w-2/5 mx-5 bg-slate-100 pe-10 ps-10 pt-4 pb-1 rounded-lg">
             <h2 className="font-black text-3xl text-center">Patient Follow-up</h2>
 
             <p className="text-lg mt-5 text-center mb-10">

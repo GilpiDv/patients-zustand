@@ -23,13 +23,13 @@ export default function PatientList() {
                     ))}
                 </>
             ) : (
-                <>
-                    <h2 className="font-black text-3xl text-center">No patients</h2>
-                    <p className="text-xl mt-5 mb-10 text-center">
+                <div className="lg:pt-0 md:pt-0 pt-10">
+                    <h2 className="font-black text-3xl text-center p-0">No patients</h2>
+                    <p className="text-xl mt-5 mb-10 text-center m-2">
                         Start adding patients {''}
                         <span className="text-indigo-600 font-bold">and they will appear here</span>
                     </p>
-                </>
+                </div>
             )}
         </div>
     )
