@@ -1,6 +1,12 @@
+import { usePatientStore } from "../store"
+
 
 export default function PatientList() {
-  return (
-    <div>PatientList</div>
-  )
+    
+    const { patients } = usePatientStore();
+    console.log("patients", patients);
+    
+    return (
+        <div>PatientList</div>
+    )
 }
