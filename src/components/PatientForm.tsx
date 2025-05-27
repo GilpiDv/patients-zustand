@@ -1,0 +1,145 @@
+import { useForm } from 'react-hook-form'
+import Error from './Error';
+import type { DraftPatient } from '../types';
+
+export default function PatientForm() {
+
+    const { register, handleSubmit, formState: {errors} } = useForm<DraftPatient>();
+  
+    const registerPatient = (data : DraftPatient) => {
+        console.log(data);
+    }
+
+    return (
+        <div className="md:w-1/2 lg:w-2/5 mx-5 bg-slate-100 pe-10 ps-10 pt-4 rounded-lg">
+            <h2 className="font-black text-3xl text-center">Seguimiento Pacientes</h2>
+
+            <p className="text-lg mt-5 text-center mb-10">
+                Añade Pacientes y {''}
+                <span className="text-indigo-600 font-bold">Administralos</span>
+            </p>
+
+            <form 
+                className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
+                noValidate
+                onSubmit={handleSubmit(registerPatient)}
+            >
+                <div className="mb-5">
+                    <label htmlFor="name" className="text-sm uppercase font-bold">
+                        Patient 
+                    </label>
+                    <input  
+                        id="name"
+                        className="w-full p-3  border border-gray-100"  
+                        type="text" 
+                        placeholder="Patient Name"
+                        {...register('name', {
+                            required: 'Patient name is required',
+                            maxLength: {
+                                value: 100,
+                                message: 'Max 100 characters'
+                            }
+                        })}
+                    />
+                    {errors.name && (
+                        <Error>
+                            {errors.name?.message}
+                        </Error>
+                    )}
+                </div>
+
+                <div className="mb-5">
+                    <label htmlFor="caretaker" className="text-sm uppercase font-bold">
+                        Propietario 
+                    </label>
+                    <input  
+                        id="caretaker"
+                        className="w-full p-3  border border-gray-100"  
+                        type="text" 
+                        placeholder="Nombre del Propietario" 
+                        {...register('caretaker', {
+                            required: 'Caretaker name is required',
+                            maxLength: {
+                                value: 100,
+                                message: 'Max 100 characters'
+                            }
+                        })}
+                    />
+                    {errors.caretaker && (
+                        <Error>
+                            {errors.caretaker?.message}
+                        </Error>
+                    )}
+                </div>
+
+                <div className="mb-5">
+                    <label htmlFor="email" className="text-sm uppercase font-bold">
+                        Email 
+                    </label>
+                    <input  
+                        id="email"
+                        className="w-full p-3  border border-gray-100"  
+                        type="email" 
+                        placeholder="email@example.com"
+                        {...register("email", {
+                            required: "E-mail is required",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: 'Invalid e-mail'
+                            }
+                        })} 
+                    />
+                    {errors.email && (
+                        <Error>
+                            {errors.email?.message}
+                        </Error>
+                    )}
+                </div>
+
+                <div className="mb-5">
+                    <label htmlFor="date" className="text-sm uppercase font-bold">
+                        Fecha Alta 
+                    </label>
+                    <input  
+                        id="date"
+                        className="w-full p-3  border border-gray-100"  
+                        type="date" 
+                        {...register('date', {
+                            required: 'Date is required',
+                        })}
+                    />
+                    {errors.date && (
+                        <Error>
+                            {errors.date?.message}
+                        </Error>
+                    )}
+                </div>
+                
+                <div className="mb-5">
+                    <label htmlFor="symptoms" className="text-sm uppercase font-bold">
+                    Síntomas 
+                    </label>
+                    <textarea  
+                        id="symptoms"
+                        className="w-full p-3  border border-gray-100"  
+                        placeholder="Patient symptoms" 
+                        {...register('symptoms', {
+                            required: 'Symptoms are required',
+                        })}
+                    ></textarea>
+                    {errors.symptoms && (
+                        <Error>
+                            {errors.symptoms?.message}
+                        </Error>
+                    )}
+                </div>
+
+                <input
+                    type="submit"
+                    className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors"
+                    value='Guardar Paciente'
+                />
+            </form> 
+        </div>
+    )
+}
