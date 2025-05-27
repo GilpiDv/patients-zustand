@@ -13,7 +13,6 @@ export default function PatientForm() {
     useEffect(() => {
         if(activeId) {
             const activePatient = patients.filter(patient => patient.id === activeId)[0];
-            console.log(activePatient);
             setValue('name', activePatient.name);
             setValue('caretaker', activePatient.caretaker);
             setValue('email', activePatient.email);
