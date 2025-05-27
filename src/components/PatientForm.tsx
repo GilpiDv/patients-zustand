@@ -36,11 +36,11 @@ export default function PatientForm() {
 
     return (
         <div className="md:w-1/2 lg:w-2/5 mx-5 bg-slate-100 pe-10 ps-10 pt-4 rounded-lg">
-            <h2 className="font-black text-3xl text-center">Seguimiento Pacientes</h2>
+            <h2 className="font-black text-3xl text-center">Patient Follow-up</h2>
 
             <p className="text-lg mt-5 text-center mb-10">
-                Añade Pacientes y {''}
-                <span className="text-indigo-600 font-bold">Administralos</span>
+                Add patients and {''}
+                <span className="text-indigo-600 font-bold">manage them</span>
             </p>
 
             <form 
@@ -74,13 +74,13 @@ export default function PatientForm() {
 
                 <div className="mb-5">
                     <label htmlFor="caretaker" className="text-sm uppercase font-bold">
-                        Propietario 
+                        Caretaker 
                     </label>
                     <input  
                         id="caretaker"
                         className="w-full p-3  border border-gray-100"  
                         type="text" 
-                        placeholder="Nombre del Propietario" 
+                        placeholder="Caretaker name" 
                         {...register('caretaker', {
                             required: 'Caretaker name is required',
                             maxLength: {
@@ -161,7 +161,7 @@ export default function PatientForm() {
                 <input
                     type="submit"
                     className="bg-indigo-600 w-full p-3 text-white uppercase font-bold hover:bg-indigo-700 cursor-pointer transition-colors"
-                    value='Guardar Paciente'
+                    value='Save Patient'
                 />
             </form> 
         </div>
