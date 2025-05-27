@@ -18,6 +18,12 @@ export default function PatientForm() {
             setValue('email', activePatient.email);
             setValue('date', activePatient.date);
             setValue('symptoms', activePatient.symptoms);
+        } else {
+            setValue('name', '');
+            setValue('caretaker', '');
+            setValue('email', '');
+            setValue('date', new Date());
+            setValue('symptoms', '');
         }
     }, [activeId])
   
