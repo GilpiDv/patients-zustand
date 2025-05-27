@@ -11,8 +11,13 @@ export default function PatientDetails({patient} : PatientDetailsProps) {
 
     const { deletePatient, getPatientById } = usePatientStore();
 
-    const handleDeleteClick = (patientId : Patient['id']) => {
-        deletePatient(patientId)
+    const handleEditClick = () => {
+        getPatientById(patient.id)
+        document.getElementById("name")?.focus();
+    }
+
+    const handleDeleteClick = () => {
+        deletePatient(patient.id)
         toast.error('Patient deleted')
     }
 
@@ -29,14 +34,14 @@ export default function PatientDetails({patient} : PatientDetailsProps) {
                 <button 
                     className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg cursor-pointer"
                     type="button"
-                    onClick={() => getPatientById(patient.id)}
+                    onClick={handleEditClick}
                 >
                     Edit
                 </button>
                 <button 
                     className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg cursor-pointer"
                     type="button"
-                    onClick={() => handleDeleteClick(patient.id)}
+                    onClick={handleDeleteClick}
                 >
                     Delete
                 </button>
