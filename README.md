@@ -64,21 +64,9 @@ README.md
 
 ## How to use
 
-- **Start the development server:**
-  ```sh
-  npm run dev
-  ```
-  The app will be available at `http://localhost:5173` by default.
-
-- **Build for production:**
-  ```sh
-  npm run build
-  ```
-
-- **Preview the production build:**
-  ```sh
-  npm run preview
-  ```
+1. Run `npm run dev` and open `http://localhost:5173` in your browser.
+2. Add, edit, or delete patients using the form and patient list.
+3. All changes are saved automatically and persist after reloading.
 
 ## Live Demo
 
