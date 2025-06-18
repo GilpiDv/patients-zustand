@@ -1,64 +1,104 @@
-# Patients Tracking Vet App
+# My Restaurant App
 
-A simple veterinary patient management application built with **React**, **TypeScript**, **Zustand** for state management, **React Hook Form** for form handling, **React Toastify** for notifications, and **Tailwind CSS** for styling. The project uses **Vite** for fast development and build tooling.
+A modern restaurant order and tip calculator built with **React**, **TypeScript**, and **Vite**. Users can browse menu
 
 ## Features
 
-- Add, edit, and delete veterinary patients
-- Form validation with helpful error messages
-- Persistent state using localStorage (via Zustand middleware)
-- Responsive and modern UI with Tailwind CSS
-- Toast notifications for user feedback
-
-## Tech Stack
-
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Zustand](https://zustand-demo.pmnd.rs/)
-- [React Hook Form](https://react-hook-form.com/)
-- [React Toastify](https://fkhadra.github.io/react-toastify/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vite](https://vitejs.dev/)
-
-## Getting Started
-
-1. **Install dependencies:**
-   ```sh
-   npm install
-   ```
-
-2. **Run the development server:**
-   ```sh
-   npm run dev
-   ```
-
-3. **Build for production:**
-   ```sh
-   npm run build
-   ```
-
-4. **Preview the production build:**
-   ```sh
-   npm run preview
-   ```
+- **Category Browsing**: Explore menu items by category with smooth transitions.
+- **Add to Order**: Click any menu item to add it to your order.
+- **Quantity Controls**: Increase or decrease item quantities with intuitive buttons.
+- **Tip Calculation**: Adjust the tip percentage and see the tip amount update instantly.
+- **Order Summary Drawer**: Slide-up panel to review and edit your order.
+- **Real-Time Totals**: Subtotal, tip, and grand total update as you make changes.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Modern UI**: Styled with TailwindCSS and animated with Framer Motion.
 
 ## Project Structure
 
 ```
+.gitignore
+eslint.config.js
+index.html
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+public/
+    img/
+        appetizers.jpg
+        beverages.jpg
+        burguers.jpg
+        cake.svg
+        coffee.svg
+        desserts.jpg
+        juice.svg
+        kids-menu.jpg
+        pizza.jpeg
+        pizza.svg
+        restaurant-logo.png
+        steak.jpg
+        steak.svg
+        tacos.jpg
+        tequila.svg
 src/
-  App.tsx                # Main app component
-  store.ts               # Zustand store for patient state
-  components/            # Reusable React components
-  types/                 # TypeScript types
-  index.css              # Tailwind CSS import
-  main.tsx               # App entry point
+    App.tsx
+    index.css
+    main.tsx
+    vite-env.d.ts
+    components/
+        MenuCategories.tsx
+        MenuItem.tsx
+        OrderContent.tsx
+        OrderTotals.tsx
+        TipPercentageForm.tsx
+    data/
+        db.ts
+    helpers/
+        index.ts
+    hooks/
+        useOrder.ts
+    types/
+        index.ts
 ```
+
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/GilpiDv/myrestaurant-app.git
+   cd myrestaurant-app
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+## Technologies Used
+
+- **React** (with TypeScript)
+- **Vite**
+- **TailwindCSS**
+- **Framer Motion**
+- **FontAwesome**
+- **clsx**
+- **ESLint**
+
+## How to Use
+
+1. Start the development server:
+   ```sh
+   npm run dev
+   ```
+2. Open your browser at [http://localhost:5173](http://localhost:5173).
+3. Select a menu category to view items.
+4. Click items to add them to your order.
+5. Adjust item quantities and tip percentage as needed.
+6. Review your order and totals in the order drawer.
+7. Save or reset your order as desired.
 
 ## Live Demo
 
-Access the deployed application here:  
 [https://tourmaline-chebakia-b6c3b0.netlify.app/](https://tourmaline-chebakia-b6c3b0.netlify.app/)
-
----
-
-This project was bootstrapped with [Vite](https://vitejs.dev/) and follows best practices for modern React development.
