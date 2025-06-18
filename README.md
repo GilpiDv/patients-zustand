@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# Patients Tracking Vet App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple veterinary patient management application built with **React**, **TypeScript**, **Zustand** for state management, **React Hook Form** for form handling, **React Toastify** for notifications, and **Tailwind CSS** for styling. The project uses **Vite** for fast development and build tooling.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add, edit, and delete veterinary patients
+- Form validation with helpful error messages
+- Persistent state using localStorage (via Zustand middleware)
+- Responsive and modern UI with Tailwind CSS
+- Toast notifications for user feedback
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+2. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
+
+4. **Preview the production build:**
+   ```sh
+   npm run preview
+   ```
+
+## Project Structure
+
+```
+src/
+  App.tsx                # Main app component
+  store.ts               # Zustand store for patient state
+  components/            # Reusable React components
+  types/                 # TypeScript types
+  index.css              # Tailwind CSS import
+  main.tsx               # App entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Live Demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Access the deployed application here:  
+[https://tourmaline-chebakia-b6c3b0.netlify.app/](https://tourmaline-chebakia-b6c3b0.netlify.app/)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+This project was bootstrapped with [Vite](https://vitejs.dev/) and follows best practices for modern React development.
